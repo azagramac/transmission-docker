@@ -1,0 +1,33 @@
+---
+services:
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: transmission
+    restart: always
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+      - TRANSMISSION_WEB_HOME=	#optional
+      - USER=torrent
+      - PASS=torrent
+      - WHITELIST=              #optional
+      - PEERPORT=               #optional
+      - HOST_WHITELIST=         #optional
+      - S6_VERBOSITY=1
+    volumes:
+      - /volume1/docker/transsmision/config:/config:rw
+      - /volume1/docker/transsmision/watch:/watch:rw
+      - /volume1/torrent:/downloads:rw
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
+    deploy:
+        resources:
+            limits:
+                memory: 2048M
+            reservations:
+                memory: 256M
+networks:
+  transmission:
