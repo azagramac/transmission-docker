@@ -1,7 +1,7 @@
 [![GitHub Release](https://img.shields.io/github/v/release/linuxserver/docker-transmission.svg?color=f64747&labelColor=9f9f9f&logoColor=ffffff&style=for-the-badge&logo=transmission)](https://github.com/linuxserver/docker-transmission/releases)
 
 <p align="center">
-  <img src="" width="300" title="logo_jf">
+  <img src="https://github.com/user-attachments/assets/ffa74193-2926-4957-974d-9a88070cd574" width="600" title="logo_tr">
 </p>
 
 ### Requeriments
@@ -68,20 +68,17 @@
 
 ### Output
     $ docker ps -a
-    CONTAINER ID   IMAGE                         COMMAND                CREATED       STATUS                    PORTS                  NAMES
+    CONTAINER ID   IMAGE                               COMMAND                  CREATED        STATUS                    PORTS                   NAMES
     1ab5d0ec0b2c   linuxserver/transmission:latest     "/transmission/tran…"    34 days ago    Up 2 hours (healthy)                              transmission
 
 ### Update image docker
     docker-compose pull transmission
 
 ## Add blacklist urls
-Edit file settings.json 
+Edit file `settings.json`
 
     "blocklist-enabled": true,
     "blocklist-url": "http://www.example.com/blocklist",
-
-Restart image docker
-    docker restart transmission
 
 ### URLs blacklist
     https://github.com/Naunter/BT_BlockLists/raw/refs/heads/master/bt_blocklists.gz
@@ -89,6 +86,8 @@ Restart image docker
     http://list.iblocklist.com/?list=bt_level2&fileformat=p2p&archiveformat=gz
     http://list.iblocklist.com/?list=bt_level3&fileformat=p2p&archiveformat=gz
 
-### Dashboard
-Open browser
-    http://IP_HOST:9091/transmission/web/
+### Restart image docker
+    docker restart transmission
+
+### Access to the dasboard
+Access to URL `https://IP_HOST:9091/transmission/web/`
