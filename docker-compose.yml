@@ -16,9 +16,9 @@ services:
       - HOST_WHITELIST=         #optional
       - S6_VERBOSITY=1
     volumes:
-      - /volume1/docker/transsmision/config:/config:rw
-      - /volume1/docker/transsmision/watch:/watch:rw
-      - /volume1/torrent:/downloads:rw
+      - /root/docker/transsmision/config:/config:rw
+      - /root/docker/transsmision/watch:/watch:rw
+      - /root/torrent:/downloads:rw
     ports:
       - 9091:9091
       - 51413:51413
